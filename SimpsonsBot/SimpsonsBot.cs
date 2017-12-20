@@ -19,7 +19,7 @@ namespace SimpsonsBot
             //Initialize the Discord client.
             discord = new DiscordClient(new DiscordConfiguration
             {
-                Token = "MzkyMjEzMjkwMzgzODM1MTQ2.DRj81Q.3_fHKcw9pko-WCiqiJuGWroggOA",
+                Token = "TOKEN_GOES_HERE",
                 TokenType = TokenType.Bot,
 
                 //Output debug information about the discord bot.
