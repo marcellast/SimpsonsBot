@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RestSharp;
 using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
@@ -39,8 +39,11 @@ namespace SimpsonsBot
 
             //String formating (removes unneceary HTML text).
             quoteHtml = quoteHtml.Substring(quoteHtml.IndexOf("<blockquote>") + 12);
-            quoteHtml = quoteHtml.Substring(0, quoteHtml.IndexOf("</blockquote>"));
-            string randomQuote = quoteHtml.Replace("<br /><br /> ", "\n");
+            quoteHtml = "*" + quoteHtml.Substring(0, quoteHtml.IndexOf("</blockquote>"));
+            quoteHtml = quoteHtml.Replace(":", ":*");
+            quoteHtml = quoteHtml.Replace("<br /><br /> ", "\n*");
+            
+            string randomQuote = quoteHtml;
 
             Console.WriteLine(ctx.User.Username + $": randomquote; GET-request={client.BaseUrl} -> {DateTime.Now.ToString("hh:mm:ss yyyy-MM-dd")}");
             await ctx.RespondAsync($"Your Random Simpsons Quote:\n\n{randomQuote}");
